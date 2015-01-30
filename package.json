@@ -1,0 +1,26 @@
+{
+  "name": "public-house",
+  "version": "1.0.0",
+  "description": "A plugin to expose npm activity as a REST api.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "6to5": "^3.0.16",
+    "6to5-runtime": "^3.0.16",
+    "etag": "^1.5.1",
+    "hapi": "^8.1.0",
+    "through2": "^0.6.3",
+    "wreck": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "install": "npm run compile",
+    "test": "npm run compile && 6to5-node test/harness.js test/**/*-test.js",
+    "start": "npm run compile && node server.js",
+    "compile": "6to5 --optional selfContained --modules common --out-dir dist src"
+  },
+  "author": "Erik Toth <totherik@gmail.com>",
+  "license": "ISC"
+}
